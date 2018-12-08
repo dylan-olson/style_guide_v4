@@ -1,0 +1,43 @@
+//*********************************/
+//********  Placeholders  *********/
+//*********************************/
+
+// Centered Extentsion
+%centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Clearfix /
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// headlines /
+%hdln-prim {
+	font-family: $font-family--primary;
+	font-size: em(30px);
+	line-height: (46px /42px);
+	margin-bottom: em(70px, 42px);
+	color: $primary-color;
+	margin-top: 0;
+}
+
+%hdln-sec {
+	font-family: $font-family--secondary;
+	font-size: em(18px);
+  font-weight: 100;
+	color: lighten(grey, 30%);
+}
+
+// column styles 
+%col {
+	float: left;
+	padding: 0 10px;
+	margin-left: 2%
+}

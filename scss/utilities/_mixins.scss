@@ -1,0 +1,51 @@
+//*********************************/
+//***********  Mixins  ************/
+//*********************************/
+
+// Flex-box enable 
+@mixin flexbox($space-type: "space-around") {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: $space-type;
+	align-items: center;
+	@content;
+}
+
+// BEM Selectors /
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier) {
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+// Button with color variant 
+@mixin button($type, $map: $button-types) {
+	width: 100%;
+	padding: em(9px);
+	box-sizing: border-box;
+	border-radius: 4px;
+	background-color: map-get($map, $type);
+	@content;
+}
+
+//media query 
+@mixin mq {
+	@media (min-width: $break-p) {
+		@content;
+	}
+}
+
+// doubly 
+@mixin doubly($margin: 1em) {
+	& + & {
+		margin-left: $margin;
+		@content;
+	}
+}
