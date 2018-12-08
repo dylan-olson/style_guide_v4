@@ -1,0 +1,19 @@
+//******************************/
+//*******  Grid System  ********/
+//******************************/
+
+// Grid Styling
+@each $i, $value in $grid-types {
+	.grid__col--#{$i}.theme__colors {
+		@include button($i, $grid-types) {
+			text-align: left;
+			margin-top: em(10px);
+			margin-bottom: em(10px);
+			@include mq {
+				text-align: center;
+			}
+		}
+	}
+}
+
+

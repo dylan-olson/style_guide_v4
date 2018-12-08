@@ -1,0 +1,23 @@
+//******************************/
+//********  Headlines  *********/
+//******************************/
+
+.headline {
+	
+	@include m(primary) {
+		@extend %hdln-prim;
+		margin-top: em(10px);
+		margin-bottom: em(40px, 42px);
+		margin-left: em(12px);
+	}
+
+	@include m(secondary) {
+		@extend %hdln-sec;
+		margin-bottom: em(22px, 24px);
+		margin-left: em(6px);
+	}
+}
+
+[class^="headline"] {
+	text-align: left;
+}

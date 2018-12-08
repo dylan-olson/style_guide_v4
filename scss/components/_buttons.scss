@@ -1,0 +1,25 @@
+//******************************/
+//*********  Buttons  **********/
+//******************************/
+
+@each $type, $value in $button-types {
+	.btn--#{$type} {
+		@include button($type);
+		color: white;
+		margin-top: em(20px);
+		@include mq {
+			margin: em(10px) em(15px);
+			width: 15%;
+		}
+	}
+}
+
+[class^="btn"] {
+	&:last-of-type {
+		margin-bottom: em(30px);
+	}
+}
+
+
+
+

@@ -1,0 +1,29 @@
+//*****************************/
+//*********  Images  **********/
+//*****************************/
+
+.img {
+
+	@include m(frame) {
+		width: 95%;
+		margin: em(30px) 0 em(40px) 0;
+		border: 1px solid lighten(grey, 20%);
+		padding: em(7px);
+		@include mq {
+			width: 70%;
+			margin-top: em(40px);
+			margin-left: em(80px);
+			padding: em(8px);
+			border: 1px solid lighten(grey, 20%);
+		}
+	}
+
+	@include m(avatar) {
+		width: 45%;
+		@include mq {
+			width: 35%;
+			padding: 0;
+		}
+	}
+
+}

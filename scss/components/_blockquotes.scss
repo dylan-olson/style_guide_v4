@@ -1,0 +1,17 @@
+//********************************/
+//********  Blockquotes  *********/
+//********************************/
+
+// Blockquotes /
+.blockquote {
+  	border-left: 10px solid $primary-color;
+  	border-radius: 4px;
+  	margin: 0 em(10px) em(40px) em(25px);
+  	padding: em(5px) em(10px) em(5px) em(15px);
+  	font-size: em(25px);
+  	text-align: left;
+  	line-height: 1em;
+  	color: $text-color;
+  	font-style: italic;
+    width: 85%;
+}

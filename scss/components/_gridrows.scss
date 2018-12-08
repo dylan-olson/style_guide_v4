@@ -1,0 +1,79 @@
+//********************************/
+//*********  Grid Rows  **********/
+//********************************/
+
+// grid row /
+.grid {
+	@include e(row) {
+		margin-top: em(30px);
+		text-align: center;
+		@extend %centered, %clearfix;
+		@include mq {
+			@include flexbox(space-around);
+		}
+	}
+}
+
+
+// grids /
+@media (min-width: $break-p) {
+
+	@for $i from 1 through $g-col-count {
+
+		$context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+		$target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+	
+		.grid__col--#{$i} {
+			width: percentage($target / $context);
+		}
+
+	}
+}
+
+// width changes for mq /
+.grid__row {
+	&:nth-of-type(10) {
+		.grid__col--5 {
+			@include mq {
+				width: 70%;
+			}
+		}
+	}
+	&:nth-of-type(11) {
+		.grid__col--4 {
+			@include mq {
+				width: 55%;
+			}
+		}
+	}
+	&:nth-of-type(12) {
+		.grid__col--7 {
+			@include mq {
+				width: 60%;
+			}
+		}
+	}
+}
+
+
+// new styles 
+[class^="grid__col--"] {
+	@media (min-width: 1px) and (max-width: 768px) {
+		margin-top: em(12px);
+		margin-bottom: em(12px);
+	}
+
+	@media (min-width: $break-p) {
+		@include doubly(percentage($g-gutter-width / $context));
+		float: left;
+		min-height: 1px;
+		padding-left: 10px;
+		padding-right: 10px;
+		&:last-of-type {
+			float: right;
+		}
+	}
+}
+
+
+
