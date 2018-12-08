@@ -1,0 +1,79 @@
+//********************************/
+//*********  Variables  **********/
+//********************************/
+
+// +++ Fonts +++ 
+$font-url-google: 'https://fonts.googleapis.com/css?family=Fjalla+One|Poppins';
+
+// +++ Import google font /
+@if varibale-exists(font-url-google) {
+	@import url($font-url-google);
+}
+
+// Font family 
+$font-family--primary: "Poppins", sans-serif;
+$font-family--secondary: "Fjalla One", sans-serif;
+
+// +++ Font Size +++ 
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+// +++ Colors +++
+
+$primary-color: #58e1c1;  // teal /
+$text-color: #919191;  // grey /
+$special-color: #51ddfc; // light blue /
+
+// +++ Button Colors  +++
+
+$sucess-color: #63cc82; // green /
+$error-color: #e4757a; // red /
+$warning-color: #fd7856; // orange /
+$info-color: #927bc1; // purple /
+
+// +++ Button Types +++ 
+$button-types: (
+	'default': $special-color,
+	'success': $sucess-color,
+	'error': $error-color,
+	'warning': $warning-color,
+	'info': $info-color
+);
+
+$grid-types: (
+	'3': lighten($info-color, 10%),
+	'4': lighten($special-color, 10%),
+	'5': lighten($sucess-color, 10%),
+	'6': darken($special-color, 20%),
+	'7': lighten($error-color, 10%),
+	'8': lighten($warning-color, 10%),
+	'12': lighten($primary-color, 10%)
+);
+
+// Em converter /
+@function em($target, $context: $base-font-size) {
+	@return ($target / $context) * 1em;
+}
+
+// grid calc /
+@function g-context($g-col-width, $g-col-count, $g-gutter-width) {
+	$g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+	@return $g-context;
+}
+
+//Grid Config 
+$g-col-width: 65px;
+$g-gutter-width: 15px;
+$g-col-count: 12;
+$max-width: 1100px;
+
+// break point/
+$break-p: 769px;
+
+
+
+
+
+
+
+
